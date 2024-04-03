@@ -1,36 +1,38 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 int main() {
-    // Deklarasi variabel
-    std::string nim, nama;
-    double nilaiTugas1, nilaiTugas2, nilaiTugas3, nilaiRataRata;
+    string namaSiswa;
+    double nilaiKeaktifan, nilaiTugas, nilaiUjian;
+    double nilaiMurniKeaktifan, nilaiMurniTugas, nilaiMurniUjian, nilaiAkhir;
 
-    // Tampilan masukan
-    std::cout << "PROGRAM HITUNG NILAI RATA-RATA" << std::endl;
-    std::cout << "Nim Siswa     : ";
-    std::getline(std::cin, nim); // Menerima input nim dengan spasi
-    std::cout << "Nama Siswa    : ";
-    std::getline(std::cin, nama); // Menerima input nama dengan spasi
-    std::cout << "Nilai Tugas I : ";
-    std::cin >> nilaiTugas1;
-    std::cout << "Nilai Tugas II: ";
-    std::cin >> nilaiTugas2;
-    std::cout << "Nilai Tugas III: ";
-    std::cin >> nilaiTugas3;
+    // Input
+    cout << "PROGRAM HITUNG NILAI AKHIR" << endl;
+    cout << "Nama Siswa : ";
+    getline(cin, namaSiswa);
+    cout << "Nilai Keaktifan : ";
+    cin >> nilaiKeaktifan;
+    cout << "Nilai Tugas : ";
+    cin >> nilaiTugas;
+    cout << "Nilai Ujian : ";
+    cin >> nilaiUjian;
 
-    // Menghitung nilai rata-rata
-    nilaiRataRata = (nilaiTugas1 + nilaiTugas2 + nilaiTugas3) / 3;
+    // Proses perhitungan
+    nilaiMurniKeaktifan = nilaiKeaktifan * 0.2;
+    nilaiMurniTugas = nilaiTugas * 0.5;
+    nilaiMurniUjian = nilaiUjian * 0.3;
+    nilaiAkhir = nilaiMurniKeaktifan + nilaiMurniTugas + nilaiMurniUjian;
 
-    // Tampilan keluaran
-    std::cout << "\nLayar Keluaran\n\n";
-    std::cout << "Nim .......... Siswa yang bernama " << nama << std::endl;
-    std::cout << "Memperoleh nilai rata-rata " << nilaiRataRata << " dari hasil tugas yang diikutinya." << std::endl;
-
-    // Menahan tampilan output
-    std::cout << "\nTekan Enter untuk keluar...";
-    std::cin.ignore(); // Mengabaikan newline dari input sebelum menekan Enter
-    std::cin.get(); // Menunggu pengguna menekan Enter
+    // Output
+    cout << "\nLayar Keluaran\n\n";
+    cout << "Siswa yang bernama " << namaSiswa << endl;
+    cout << "Dengan Nilai Persentasi Yang dihasilkan." << endl;
+    cout << "Nilai Keaktifan * 20% : " << nilaiMurniKeaktifan << endl;
+    cout << "Nilai Tugas * 50% : " << nilaiMurniTugas << endl;
+    cout << "Nilai Ujian * 30% : " << nilaiMurniUjian << endl;
+    cout << "Jadi Siswa yang bernama " << namaSiswa << " memperoleh nilai akhir sebesar " << nilaiAkhir << endl;
 
     return 0;
 }
